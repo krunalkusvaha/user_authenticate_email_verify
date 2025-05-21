@@ -33,38 +33,6 @@ class BookingController extends Controller
     }
 
     // This method will process the booking store in database
-    // public function store(Request $request) {
-
-    //     $validator = Validator::make($request->all(), [
-    //         'customer_name' => 'required|string|max:255',
-    //         'customer_email' => 'required|email',
-    //         'booking_date' => 'required|date',
-    //         'booking_type' => 'required|in:full_day,half_day,custom',
-    //         'booking_slot' => 'required_if:booking_type,half_day|nullable|in:first_half,second_half',
-    //         'booking_time_from' => 'required_if:booking_type,custom',
-    //         'booking_time_to' => 'required_if:booking_type,custom',
-    //     ]);
-
-    //     if ($validator->passes()) {
-
-    //         $user_booking = new Booking();
-    //         $user_booking->user_id = Auth::user()->id;
-    //         $user_booking->customer_name = $request->customer_name;
-    //         $user_booking->customer_email = $request->customer_email;
-    //         $user_booking->booking_date = $request->booking_date;
-    //         $user_booking->booking_type = $request->booking_type;
-    //         $user_booking->booking_slot = $request->booking_slot;
-    //         $user_booking->from_time = $request->booking_time_from;
-    //         $user_booking->to_time = $request->booking_time_to;
-    //         // dd($user_booking);
-    //         $user_booking->save();
-
-    //         return redirect()->back()->with('success', 'Booking created successfully!');
-    //     } else {
-    //         return redirect()->route('account.booking')->withInput()->withErrors($validator);
-    //     }
-    // }
-
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
